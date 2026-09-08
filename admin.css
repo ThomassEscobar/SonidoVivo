@@ -25,6 +25,7 @@ body {
     background-color: var(--sv-dark);
     color: var(--sv-text);
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
 }
 
 /* ==========================================
@@ -81,12 +82,23 @@ body {
 }
 
 /* ==========================================
+   CONTENEDOR PANEL DERECHO (MAIN + FOOTER)
+   ========================================== */
+.admin-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: calc(100% - 260px);
+}
+
+/* ==========================================
    ÁREA PRINCIPAL DE CONTENIDO
    ========================================== */
 .main-content {
     flex: 1;
     padding: 36px;
-    overflow-y: auto;
+    width: 100%;
 }
 
 .header-title {
@@ -207,7 +219,7 @@ tr:hover {
 }
 
 /* ==========================================
-   BADGES Y ESTADOS (STOCK Y ENVIOS)
+   BADGES Y ESTADOS
    ========================================== */
 .badge {
     display: inline-block;
@@ -230,60 +242,19 @@ tr:hover {
 }
 
 /* ==========================================
-   ADAPTACIÓN RESPONSIVA (MÓVIL Y TABLET)
+   FOOTER (AJUSTADO PARA PANEL ADMIN)
    ========================================== */
-
-/* Tablets (≥ 768px) */
-@media (max-width: 1024px) {
-    .main-content {
-        padding: 24px;
-    }
-}
-
-/* Dispositivos Móviles (≥ 360px) */
-@media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .sidebar nav {
-        flex-direction: row;
-        overflow-x: auto;
-    }
-
-    .sidebar nav a {
-        white-space: nowrap;
-    }
-
-    .main-content {
-        padding: 20px;
-    }
-
-    .header-title {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .btn-primary {
-        width: 100%;
-    }
-}
-
 .site-footer {
     background-color: var(--sv-dark-soft);
     border-top: 1px solid var(--sv-border);
-    padding: 60px 0 30px;
+    padding: 40px 36px 30px;
     margin-top: auto;
+    width: 100%;
 }
 
 .footer-container {
-    width: min(100% - 40px, var(--sv-container, 1240px));
-    margin-inline: auto;
+    width: 100%;
+    margin: 0;
 }
 
 .footer-main {
@@ -294,7 +265,7 @@ tr:hover {
     border-bottom: 1px solid var(--sv-border);
 }
 
-/* MARCA Y REDES SOCIALES */
+/* Marca y redes */
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -359,7 +330,7 @@ tr:hover {
     transform: translateY(-3px);
 }
 
-/* COLUMNAS DE NAVEGACIÓN Y CONTACTO */
+/* Columnas */
 .footer-column h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
@@ -386,7 +357,6 @@ tr:hover {
     color: var(--sv-primary);
 }
 
-/* INFORMACIÓN DE CONTACTO / ADDRESS */
 .footer-column address {
     font-style: normal;
     display: flex;
@@ -408,7 +378,7 @@ tr:hover {
     width: 16px;
 }
 
-/* SECCIÓN INFERIOR (COPYRIGHT Y LEGAL) */
+/* Parte inferior */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -435,10 +405,62 @@ tr:hover {
     color: var(--sv-white);
 }
 
-/* ADAPTACIÓN RESPONSIVA */
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA
+   ========================================== */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 24px;
+    }
+    .site-footer {
+        padding: 30px 24px;
+    }
+}
+
 @media (max-width: 900px) {
     .footer-main {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar nav a {
+        white-space: nowrap;
+    }
+
+    .admin-layout {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .site-footer {
+        padding: 30px 20px;
+    }
+
+    .header-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-primary {
+        width: 100%;
     }
 }
 
