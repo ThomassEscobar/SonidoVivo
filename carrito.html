@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sonido Vivo - Revisa tu carrito de compras y gestiona tus productos antes de finalizar el pedido.">
+    
+    <title>Mi Carrito | Sonido Vivo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Sonido Vivo - Inicio">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-music"></i>
+                </span>
+                <span class="logo-text">
+                    SONIDO<span>VIVO</span>
+                </span>
+            </a>
+
+            <!-- Navegación principal -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="catalogo.html?categoria=guitarras" class="nav-link">Guitarras</a></li>
+                    <li><a href="catalogo.html?categoria=baterias" class="nav-link">Baterías</a></li>
+                    <li><a href="catalogo.html?categoria=teclados" class="nav-link">Teclados</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acciones -->
+            <div class="header-actions">
+                <a href="catalogo.html" class="header-action" aria-label="Buscar productos">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="login.html" class="header-action" aria-label="Iniciar sesión">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="carrito.html" class="header-action cart-action" aria-label="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         MAIN CONTENT - CARRITO
+    ====================================================== -->
+    <main class="cart-page section">
+        <div class="section-container">
+            
+            <div class="cart-header">
+                <span class="section-eyebrow">RESUMEN DE COMPRA</span>
+                <h1>Tu Carrito de Compras</h1>
+            </div>
+
+            <!-- Layout principal del Carrito -->
+            <div class="cart-layout">
+                
+                <!-- Lista de productos -->
+                <section class="cart-items-section">
+                    <div class="cart-table-header">
+                        <span>Producto</span>
+                        <span>Precio</span>
+                        <span>Cantidad</span>
+                        <span>Subtotal</span>
+                        <span>Acción</span>
+                    </div>
+
+                    <!-- Contenedor dinámico de items -->
+                    <div id="cartItemsContainer" class="cart-items-list">
+                        <!-- Se renderiza desde carrito.js -->
+                    </div>
+
+                    <!-- Estado vacío -->
+                    <div id="emptyCartMessage" class="empty-cart" style="display: none;">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <h2>Tu carrito está vacío</h2>
+                        <p>¿Aún no te decides? Explora nuestro catálogo y encuentra los mejores instrumentos.</p>
+                        <a href="catalogo.html" class="btn btn-primary">
+                            Ir al Catálogo <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Acciones globales del carrito -->
+                    <div id="cartGlobalActions" class="cart-global-actions">
+                        <a href="catalogo.html" class="btn btn-secondary">
+                            <i class="fa-solid fa-arrow-left"></i> Seguir comprando
+                        </a>
+                        <button type="button" id="clearCartBtn" class="btn btn-danger-outline">
+                            <i class="fa-solid fa-trash-can"></i> Vaciar carrito
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Resumen de costos -->
+                <aside id="cartSummary" class="cart-summary-section">
+                    <div class="summary-card">
+                        <h2>Resumen del Pedido</h2>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$0</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Envío</span>
+                            <span id="summaryShipping" class="free-shipping">Por calcular</span>
+                        </div>
+
+                        <!-- Cupón de descuento -->
+                        <div class="coupon-box">
+                            <label for="couponCode">¿Tienes un cupón de descuento?</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="couponCode" placeholder="Ej: SONIDO10">
+                                <button type="button" id="applyCouponBtn" class="btn btn-secondary">Aplicar</button>
+                            </div>
+                            <small id="couponMessage" class="coupon-msg"></small>
+                        </div>
+
+                        <div class="summary-row discount-row" id="discountRow" style="display: none;">
+                            <span>Descuento</span>
+                            <span id="summaryDiscount">-$0</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong id="summaryTotal" class="total-price">$0</strong>
+                        </div>
+
+                        <button type="button" id="checkoutBtn" class="btn btn-primary checkout-btn">
+                            Proceder al Pago <i class="fa-solid fa-lock"></i>
+                        </button>
+
+                        <div class="secure-payment-badge">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Compra 100% Segura y Garantizada</span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fa-solid fa-music"></i></span>
+                        <span class="logo-text">SONIDO<span>VIVO</span></span>
+                    </a>
+                    <p>Instrumentos musicales, equipos de sonido y accesorios para músicos.</p>
+                </div>
+                <div class="footer-column">
+                    <h2>Tienda</h2>
+                    <ul>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="catalogo.html?categoria=guitarras">Guitarras</a></li>
+                        <li><a href="catalogo.html?categoria=bajos">Bajos</a></li>
+                        <li><a href="catalogo.html?categoria=baterias">Baterías</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Atención</h2>
+                    <ul>
+                        <li><a href="login.html">Mi cuenta</a></li>
+                        <li><a href="carrito.html">Mi carrito</a></li>
+                        <li><a href="index.html#nosotros">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" id="ubicacion">
+                    <h2>Encuéntranos</h2>
+                    <address>
+                        <p><i class="fa-solid fa-location-dot"></i> Viña del Mar, Región de Valparaíso</p>
+                        <p><i class="fa-solid fa-envelope"></i> contacto@sonidovivo.cl</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="index.js"></script>
+    <script src="carrito.js"></script>
+</body>
+</html>
