@@ -1,0 +1,145 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Sonido Vivo</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO SIMPLE -->
+    <header class="checkout-header">
+        <div class="header-container">
+            <h1 class="logo">Sonido Vivo</h1>
+            <a href="index.html" class="link-volver">← Volver a la tienda</a>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="checkout-container">
+        
+        <!-- SECCIÓN IZQUIERDA: FORMULARIOS -->
+        <section class="checkout-forms">
+            
+            <!-- PASO 1: DATOS DE CONTACTO Y ENVÍO -->
+            <div class="form-card">
+                <h2>1. Datos de Envío</h2>
+                <form id="formCheckout">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" class="input-control" placeholder="Ej: Pedro Pascal" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rut">RUT *</label>
+                            <input type="text" id="rut" class="input-control" placeholder="12.345.678-9" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" class="input-control" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" class="input-control" placeholder="+56 9 1234 5678" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="direccion">Dirección de Entrega *</label>
+                            <input type="text" id="direccion" class="input-control" placeholder="Av. Providencia 1234, Depto 501" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="region">Región *</label>
+                            <select id="region" class="select-control" required>
+                                <option value="">Selecciona una región</option>
+                                <option value="metropolitana">Región Metropolitana</option>
+                                <option value="valparaiso">Valparaíso</option>
+                                <option value="biobio">Bío Bío</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comuna">Comuna *</label>
+                            <input type="text" id="comuna" class="input-control" placeholder="Ej: Santiago" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PASO 2: MÉTODO DE PAGO -->
+            <div class="form-card">
+                <h2>2. Método de Pago</h2>
+                <div class="payment-options">
+                    <label class="payment-option active">
+                        <input type="radio" name="pago" value="webpay" checked>
+                        <div class="option-info">
+                            <strong>Webpay Plus / Débito y Crédito</strong>
+                            <span>Paga de forma segura con tarjetas chilenas.</span>
+                        </div>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="pago" value="transferencia">
+                        <div class="option-info">
+                            <strong>Transferencia Bancaria Directa</strong>
+                            <span>Recibirás los datos bancarios al confirmar.</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN DERECHA: RESUMEN DE LA COMPRA -->
+        <aside class="checkout-summary">
+            <div class="summary-card">
+                <h2>Resumen del Pedido</h2>
+                
+                <div class="cart-items-list" id="listaProductos">
+                    <div class="item-row">
+                        <div class="item-detail">
+                            <span class="item-name">Guitarra Fender Stratocaster</span>
+                            <span class="item-qty">x1</span>
+                        </div>
+                        <span class="item-price">$650.000</span>
+                    </div>
+
+                    <div class="item-row">
+                        <div class="item-detail">
+                            <span class="item-name">Pedal Boss DS-1</span>
+                            <span class="item-qty">x1</span>
+                        </div>
+                        <span class="item-price">$65.000</span>
+                    </div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotalAmount">$715.000</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <span id="shippingAmount">$4.990</span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row total-row">
+                    <span>Total a pagar</span>
+                    <span id="totalAmount">$719.990</span>
+                </div>
+
+                <button type="submit" form="formCheckout" class="btn-primary btn-block">Pagar Ahora</button>
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
