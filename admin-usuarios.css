@@ -27,7 +27,19 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* SIDEBAR */
+/* =========================================================
+   LAYOUT ADMIN (CONTENEDOR DERECHO)
+========================================================= */
+.admin-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
 .sidebar {
     width: 260px;
     background-color: var(--sv-dark-soft);
@@ -78,11 +90,12 @@ body {
     color: var(--sv-primary);
 }
 
-/* ÁREA PRINCIPAL */
+/* =========================================================
+   ÁREA PRINCIPAL
+========================================================= */
 .main-content {
     flex: 1;
     padding: 36px;
-    overflow-y: auto;
 }
 
 .header-title {
@@ -99,15 +112,30 @@ body {
     font-size: 1.6rem;
     color: var(--sv-white);
     font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
-/* BUSCADOR */
+/* =========================================================
+   TOOLBAR & CONTROLES
+========================================================= */
 .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     margin-bottom: 24px;
-    max-width: 450px;
+    flex-wrap: wrap;
 }
 
-.input-control {
+.search-box {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    max-width: 550px;
+}
+
+.input-control,
+.select-control {
     padding: 12px 16px;
     background-color: var(--sv-card);
     border: 1px solid var(--sv-border);
@@ -116,14 +144,23 @@ body {
     font-size: 0.9rem;
     width: 100%;
     outline: none;
-    transition: border-color 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.input-control:focus {
+.select-control option {
+    background-color: var(--sv-card);
+    color: var(--sv-white);
+}
+
+.input-control:focus,
+.select-control:focus {
     border-color: var(--sv-primary);
+    box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.15);
 }
 
-/* TABLA DE USUARIOS */
+/* =========================================================
+   TABLA DE USUARIOS
+========================================================= */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -151,33 +188,56 @@ th {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.75rem;
+    letter-spacing: 0.8px;
+}
+
+tr:last-child td {
+    border-bottom: none;
 }
 
 tr:hover {
     background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* ROLES Y ESTADOS */
-.role-badge {
+/* =========================================================
+   ETIQUETAS (BADGES) DE ROLES Y ESTADOS
+========================================================= */
+.badge {
+    display: inline-block;
     padding: 4px 10px;
     border-radius: 6px;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.role-admin {
+.badge-admin {
     background-color: rgba(255, 90, 31, 0.15);
     color: var(--sv-primary);
     border: 1px solid rgba(255, 90, 31, 0.3);
 }
 
-.role-client {
+.badge-cliente {
     background-color: rgba(255, 255, 255, 0.05);
     color: var(--sv-muted);
     border: 1px solid var(--sv-border);
 }
 
-/* BOTONES */
+.badge-success {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-inactive {
+    background-color: rgba(156, 163, 175, 0.15);
+    color: #9ca3af;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
 .btn-primary {
     background-color: var(--sv-primary);
     color: var(--sv-white);
@@ -185,37 +245,146 @@ tr:hover {
     padding: 12px 20px;
     border-radius: var(--sv-radius-small);
     font-weight: 700;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .btn-primary:hover {
     background-color: var(--sv-primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--sv-white);
+    border: 1px solid var(--sv-border);
+    padding: 12px 20px;
+    border-radius: var(--sv-radius-small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.25s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--sv-primary);
 }
 
 .btn-action {
     padding: 8px 14px;
-    border-radius: var(--sv-radius-small);
-    border: 1px solid var(--sv-border);
-    background-color: rgba(255, 255, 255, 0.06);
-    color: var(--sv-white);
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 0.82rem;
     font-weight: 600;
+    transition: all 0.2s ease;
 }
 
-.btn-action:hover {
+.btn-edit {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--sv-white);
+    border: 1px solid var(--sv-border);
+}
+
+.btn-edit:hover {
     border-color: var(--sv-primary);
     color: var(--sv-primary);
 }
 
-@media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; padding: 20px; }
-    .sidebar nav { flex-direction: row; overflow-x: auto; }
-    .main-content { padding: 20px; }
+.btn-danger {
+    background-color: rgba(220, 38, 38, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
+.btn-danger:hover {
+    background-color: rgba(220, 38, 38, 0.3);
+}
+
+.btn-success-bg {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.btn-success-bg:hover {
+    background-color: rgba(16, 185, 129, 0.3);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-card {
+    background-color: var(--sv-dark-soft);
+    border-radius: var(--sv-radius);
+    border: 1px solid var(--sv-border);
+    width: 100%;
+    max-width: 580px;
+    padding: 28px;
+    box-shadow: var(--sv-shadow);
+}
+
+.modal-header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--sv-border);
+    padding-bottom: 14px;
+}
+
+.modal-header h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    color: var(--sv-white);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sv-text);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--sv-border);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 .site-footer {
     background-color: var(--sv-dark-soft);
     border-top: 1px solid var(--sv-border);
@@ -236,7 +405,6 @@ tr:hover {
     border-bottom: 1px solid var(--sv-border);
 }
 
-/* MARCA Y REDES SOCIALES */
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -301,7 +469,6 @@ tr:hover {
     transform: translateY(-3px);
 }
 
-/* COLUMNAS DE NAVEGACIÓN Y CONTACTO */
 .footer-column h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
@@ -328,7 +495,6 @@ tr:hover {
     color: var(--sv-primary);
 }
 
-/* INFORMACIÓN DE CONTACTO / ADDRESS */
 .footer-column address {
     font-style: normal;
     display: flex;
@@ -350,7 +516,6 @@ tr:hover {
     width: 16px;
 }
 
-/* SECCIÓN INFERIOR (COPYRIGHT Y LEGAL) */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -377,11 +542,20 @@ tr:hover {
     color: var(--sv-white);
 }
 
-/* ADAPTACIÓN RESPONSIVA */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .footer-main {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; padding: 20px; }
+    .sidebar nav { flex-direction: row; overflow-x: auto; }
+    .main-content { padding: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
 }
 
 @media (max-width: 550px) {
