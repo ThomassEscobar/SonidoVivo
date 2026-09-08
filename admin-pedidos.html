@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Pedidos - Sonido Vivo</title>
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="admin-pedidos.css">
 </head>
 <body>
@@ -18,92 +20,183 @@
         </nav>
     </aside>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="main-content">
-        
-        <div class="header-title">
-            <h1>Gestión de Pedidos</h1>
-        </div>
+    <!-- CONTENEDOR DERECHO (MAIN + FOOTER) -->
+    <div class="admin-layout">
 
-        <!-- BARRA DE BÚSQUEDA Y FILTRO DE ESTADO -->
-        <div class="toolbar">
-            <div class="search-box">
-                <input type="text" id="inputBuscarPedido" class="input-control" placeholder="Buscar por ID pedido, cliente o RUT...">
-                <select id="selectEstadoPedido" class="select-control" style="width: 200px;">
-                    <option value="">Todos los estados</option>
-                    <option value="Pendiente">Pendiente</option>
-                    <option value="En Preparación">En Preparación</option>
-                    <option value="Enviado">Enviado</option>
-                    <option value="Entregado">Entregado</option>
-                    <option value="Cancelado">Cancelado</option>
-                </select>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <div class="header-title">
+                <h1>Gestión de Pedidos</h1>
             </div>
-        </div>
 
-        <!-- TABLA DE PEDIDOS -->
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>N° Pedido</th>
-                        <th>Fecha</th>
-                        <th>Cliente</th>
-                        <th>Total</th>
-                        <th>Estado</th>
-                        <th>Seguimiento</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaPedidosBody">
-                    <tr>
-                        <td><strong>#PED-3001</strong></td>
-                        <td>2026-09-07</td>
-                        <td>Gonzalo Ramírez</td>
-                        <td>$145.000</td>
-                        <td><span class="badge badge-warning">Pendiente</span></td>
-                        <td>---</td>
-                        <td>
-                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PED-3002</strong></td>
-                        <td>2026-09-06</td>
-                        <td>Valeria Araya</td>
-                        <td>$89.990</td>
-                        <td><span class="badge badge-info">En Preparación</span></td>
-                        <td>---</td>
-                        <td>
-                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PED-3003</strong></td>
-                        <td>2026-09-04</td>
-                        <td>Lucas Morales</td>
-                        <td>$320.000</td>
-                        <td><span class="badge badge-primary">Enviado</span></td>
-                        <td>ST-987654321</td>
-                        <td>
-                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>#PED-3004</strong></td>
-                        <td>2026-09-02</td>
-                        <td>Camila Navarro</td>
-                        <td>$45.000</td>
-                        <td><span class="badge badge-success">Entregado</span></td>
-                        <td>ST-123456789</td>
-                        <td>
-                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <!-- BARRA DE BÚSQUEDA Y FILTRO DE ESTADO -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" id="inputBuscarPedido" class="input-control" placeholder="Buscar por ID pedido, cliente o RUT...">
+                    <select id="selectEstadoPedido" class="select-control" style="width: 200px;">
+                        <option value="">Todos los estados</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En Preparación">En Preparación</option>
+                        <option value="Enviado">Enviado</option>
+                        <option value="Entregado">Entregado</option>
+                        <option value="Cancelado">Cancelado</option>
+                    </select>
+                </div>
+            </div>
 
-    </main>
+            <!-- TABLA DE PEDIDOS -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N° Pedido</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Seguimiento</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaPedidosBody">
+                        <tr>
+                            <td><strong>#PED-3001</strong></td>
+                            <td>2026-09-07</td>
+                            <td>Gonzalo Ramírez</td>
+                            <td>$145.000</td>
+                            <td><span class="badge-status badge-pending">Pendiente</span></td>
+                            <td>---</td>
+                            <td>
+                                <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#PED-3002</strong></td>
+                            <td>2026-09-06</td>
+                            <td>Valeria Araya</td>
+                            <td>$89.990</td>
+                            <td><span class="badge-status badge-pending">En Preparación</span></td>
+                            <td>---</td>
+                            <td>
+                                <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#PED-3003</strong></td>
+                            <td>2026-09-04</td>
+                            <td>Lucas Morales</td>
+                            <td>$320.000</td>
+                            <td><span class="badge-status badge-completed">Enviado</span></td>
+                            <td>ST-987654321</td>
+                            <td>
+                                <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#PED-3004</strong></td>
+                            <td>2026-09-02</td>
+                            <td>Camila Navarro</td>
+                            <td>$45.000</td>
+                            <td><span class="badge-status badge-completed">Entregado</span></td>
+                            <td>ST-123456789</td>
+                            <td>
+                                <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <!-- FOOTER GLOBAL -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-main">
+
+                    <!-- Marca -->
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo footer-logo">
+                            <span class="logo-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </span>
+                            <span class="logo-text">
+                                SONIDO<span>VIVO</span>
+                            </span>
+                        </a>
+                        <p>
+                            Instrumentos musicales, equipos de sonido
+                            y accesorios para músicos.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram de Sonido Vivo">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook de Sonido Vivo">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube de Sonido Vivo">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Navegación -->
+                    <div class="footer-column">
+                        <h2>Tienda</h2>
+                        <ul>
+                            <li><a href="catalogo.html">Catálogo</a></li>
+                            <li><a href="catalogo.html?categoria=guitarras">Guitarras</a></li>
+                            <li><a href="catalogo.html?categoria=bajos">Bajos</a></li>
+                            <li><a href="catalogo.html?categoria=baterias">Baterías</a></li>
+                            <li><a href="catalogo.html?categoria=teclados">Teclados</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Atención -->
+                    <div class="footer-column">
+                        <h2>Atención</h2>
+                        <ul>
+                            <li><a href="login.html">Mi cuenta</a></li>
+                            <li><a href="carrito.html">Mi carrito</a></li>
+                            <li><a href="#nosotros">Sobre nosotros</a></li>
+                            <li><a href="#ubicacion">Ubicación</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contacto -->
+                    <div class="footer-column" id="ubicacion">
+                        <h2>Encuéntranos</h2>
+                        <address>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Viña del Mar, Región de Valparaíso
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i>
+                                Atención al cliente
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                contacto@sonidovivo.cl
+                            </p>
+                        </address>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+                    <div class="footer-legal">
+                        <a href="#">Términos y condiciones</a>
+                        <a href="#">Política de privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
 
     <!-- MODAL GESTIONAR ESTADO / SEGUIMIENTO -->
     <div class="modal-overlay" id="modalPedido">
