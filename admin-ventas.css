@@ -184,13 +184,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal; /* Cambiado de 'nowrap' a 'normal' para ajustar textos */
 }
 
 th, td {
-    padding: 16px 20px;
+    padding: 12px 14px; /* Un poco menos de relleno para ahorrar espacio */
     border-bottom: 1px solid #f1f5f9;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 th {

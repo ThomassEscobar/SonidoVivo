@@ -60,7 +60,7 @@ body {
 }
 
 /* ==========================================
-   ÁREA PRINCIPAL DE CONTENIDO
+   ÁREA PRINCIPAL
    ========================================== */
 .main-content {
     flex: 1;
@@ -77,8 +77,7 @@ body {
     flex-wrap: wrap;
 }
 
-.header-title h1, 
-.header-title h2 {
+.header-title h1 {
     font-size: 1.5rem;
     color: #1e293b;
     font-weight: 700;
@@ -100,7 +99,7 @@ body {
     display: flex;
     gap: 10px;
     flex: 1;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .input-control, 
@@ -121,14 +120,14 @@ body {
 }
 
 /* ==========================================
-   TABLA RESPONSIVA
+   TABLA RESPONSIVA (SIN SCROLL EXCESIVO)
    ========================================== */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
     margin-bottom: 32px;
 }
@@ -137,13 +136,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal; /* Permite el ajuste natural de líneas */
 }
 
 th, td {
-    padding: 16px 20px;
+    padding: 12px 16px;
     border-bottom: 1px solid #f1f5f9;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 th {
@@ -159,6 +158,11 @@ tr:hover {
     background-color: #f8fafc;
 }
 
+/* ESTILOS DE STOCK */
+.stock-ok { color: #0f172a; font-weight: 500; }
+.stock-low { color: #dc2626; font-weight: 700; }
+.stock-out { color: #94a3b8; font-weight: 600; }
+
 /* ==========================================
    BOTONES Y ACCIONES
    ========================================== */
@@ -171,7 +175,6 @@ tr:hover {
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -188,18 +191,13 @@ tr:hover {
     cursor: pointer;
 }
 
-.btn-secondary:hover {
-    background-color: #cbd5e1;
-}
-
 .btn-action {
-    padding: 8px 14px;
+    padding: 6px 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    transition: background-color 0.2s ease;
 }
 
 .btn-edit {
@@ -215,7 +213,6 @@ tr:hover {
 .btn-danger {
     background-color: #fee2e2;
     color: #991b1b;
-    border: none;
 }
 
 .btn-danger:hover {
@@ -223,41 +220,10 @@ tr:hover {
 }
 
 /* ==========================================
-   BADGES Y ESTADOS DE STOCK
-   ========================================== */
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.badge-success {
-    background-color: #dcfce7;
-    color: #166534;
-}
-
-.badge-warning {
-    background-color: #fef9c3;
-    color: #854d0e;
-}
-
-.badge-danger {
-    background-color: #fee2e2;
-    color: #991b1b;
-}
-
-.stock-critical {
-    color: #dc2626;
-    font-weight: bold;
-}
-
-/* ==========================================
-   MODAL (VENTANA EMERGENTE DE FORMULARIO)
+   MODAL
    ========================================== */
 .modal-overlay {
-    display: none; /* Se activa con clase o JS cambiando a flex */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -274,15 +240,12 @@ tr:hover {
     background-color: #ffffff;
     border-radius: 12px;
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     padding: 24px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 12px;
@@ -319,46 +282,12 @@ tr:hover {
     border-top: 1px solid #e2e8f0;
 }
 
-/* ==========================================
-   DISEÑO RESPONSIVO (MÓVIL Y TABLET)
-   ========================================== */
+/* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 16px;
-    }
-
-    .sidebar nav {
-        flex-direction: row;
-        overflow-x: auto;
-    }
-
-    .sidebar nav a {
-        white-space: nowrap;
-    }
-
-    .main-content {
-        padding: 16px;
-    }
-
-    .header-title {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .btn-primary {
-        width: 100%;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group.full-width {
-        grid-column: span 1;
-    }
+    body { flex-direction: column; }
+    .sidebar { width: 100%; padding: 16px; }
+    .sidebar nav { flex-direction: row; overflow-x: auto; }
+    .main-content { padding: 16px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
 }
