@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Sonido Vivo - Admin</h2>
+        <nav>
+            <a href="#inventario" class="active">📦 Inventario y Stock</a>
+            <a href="#pedidos">🛒 Gestión de Pedidos</a>
+            <a href="#clientes">👥 Clientes Registrados</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <!-- SECCIÓN: INVENTARIO DE PRODUCTOS -->
+        <section id="inventario">
+            <div class="header-title">
+                <h1>Control de Productos y Stock</h1>
+                <button class="btn-primary">+ Agregar Producto</button>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock Actual</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GUIT-001</td>
+                            <td>Guitarra Eléctrica Fender Stratocaster</td>
+                            <td>Guitarras</td>
+                            <td>$650.000</td>
+                            <td><strong>5 un.</strong></td>
+                            <td>
+                                <button class="btn-action btn-edit">Editar Stock</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AMP-002</td>
+                            <td>Amplificador Marshall Mustang 50W</td>
+                            <td>Amplificadores</td>
+                            <td>$220.000</td>
+                            <td><strong>2 un.</strong></td>
+                            <td>
+                                <button class="btn-action btn-edit">Editar Stock</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PEDIDOS REMOTOS -->
+        <section id="pedidos" style="margin-top: 40px;">
+            <div class="header-title">
+                <h2>Pedidos Recibidos (Web / WhatsApp)</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th># Pedido</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Método Envío</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1002</td>
+                            <td>Juan Pérez</td>
+                            <td>$120.000</td>
+                            <td>Starken</td>
+                            <td><span class="badge badge-warning">En Preparación</span></td>
+                            <td>
+                                <button class="btn-action btn-primary">Actualizar Estado</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1001</td>
+                            <td>María González</td>
+                            <td>$650.000</td>
+                            <td>Retiro en Tienda</td>
+                            <td><span class="badge badge-success">Entregado</span></td>
+                            <td>
+                                <button class="btn-action btn-edit">Ver Detalle</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
