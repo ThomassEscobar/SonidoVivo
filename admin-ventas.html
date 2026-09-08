@@ -1,0 +1,114 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ventas - Sonido Vivo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-ventas.css">
+</head>
+<body>
+
+    <!-- MENÚ LATERAL DE NAVEGACIÓN -->
+    <aside class="sidebar">
+        <h2>Sonido Vivo - Admin</h2>
+        <nav>
+            <a href="admin-productos.html">📦 Productos e Inventario</a>
+            <a href="admin-pedidos.html">🛒 Gestión de Pedidos</a>
+            <a href="admin-ventas.html" class="active">📊 Reporte de Ventas</a>
+            <a href="admin-clientes.html">👥 Clientes Registrados</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <div class="header-title">
+            <h1>Resumen y Reporte de Ventas</h1>
+            <button class="btn-primary" id="btnExportar">Exportar Reporte</button>
+        </div>
+
+        <!-- TARJETAS DE MÉTRICAS (KPIs) -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-title">Ventas Totales</span>
+                <span class="kpi-value" id="totalVentas">$0</span>
+                <span class="kpi-subtext">Acumulado del periodo</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Pedidos Totales</span>
+                <span class="kpi-value" id="totalPedidos">0</span>
+                <span class="kpi-subtext">Transacciones realizadas</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Ticket Promedio</span>
+                <span class="kpi-value" id="ticketPromedio">$0</span>
+                <span class="kpi-subtext">Promedio por compra</span>
+            </div>
+        </div>
+
+        <!-- FILTROS DE BÚSQUEDA Y RANGO DE FECHAS -->
+        <div class="toolbar">
+            <div class="filter-group">
+                <div class="date-input">
+                    <label for="fechaInicio">Desde:</label>
+                    <input type="date" id="fechaInicio" class="input-control">
+                </div>
+                <div class="date-input">
+                    <label for="fechaFin">Hasta:</label>
+                    <input type="date" id="fechaFin" class="input-control">
+                </div>
+                <button class="btn-action btn-edit" id="btnFiltrar">Filtrar</button>
+            </div>
+        </div>
+
+        <!-- TABLA DE HISTORIAL DE VENTAS -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th># Folio</th>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Canal</th>
+                        <th>Total</th>
+                        <th>Estado Pago</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaVentasBody">
+                    <tr>
+                        <td><strong>#V-1001</strong></td>
+                        <td>2026-09-01</td>
+                        <td>Carlos Mendoza</td>
+                        <td>Web</td>
+                        <td>$650.000</td>
+                        <td><span class="badge badge-success">Pagado</span></td>
+                        <td><button class="btn-action btn-edit">Ver Detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>#V-1002</strong></td>
+                        <td>2026-09-03</td>
+                        <td>Andrea Silva</td>
+                        <td>Presencial</td>
+                        <td>$220.000</td>
+                        <td><span class="badge badge-success">Pagado</span></td>
+                        <td><button class="btn-action btn-edit">Ver Detalle</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>#V-1003</strong></td>
+                        <td>2026-09-05</td>
+                        <td>Felipe Rojas</td>
+                        <td>WhatsApp</td>
+                        <td>$65.000</td>
+                        <td><span class="badge badge-warning">Pendiente</span></td>
+                        <td><button class="btn-action btn-edit">Ver Detalle</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="admin-ventas.js"></script>
+</body>
+</html>
