@@ -1,0 +1,143 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos - Sonido Vivo</title>
+    <link rel="stylesheet" href="admin-pedidos.css">
+</head>
+<body>
+
+    <!-- MENÚ LATERAL DE NAVEGACIÓN -->
+    <aside class="sidebar">
+        <h2>Sonido Vivo - Admin</h2>
+        <nav>
+            <a href="admin-productos.html">📦 Productos e Inventario</a>
+            <a href="admin-pedidos.html" class="active">🛒 Gestión de Pedidos</a>
+            <a href="admin-ventas.html">📊 Reporte de Ventas</a>
+            <a href="admin-usuarios.html">👥 Gestión de Usuarios</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <div class="header-title">
+            <h1>Gestión de Pedidos</h1>
+        </div>
+
+        <!-- BARRA DE BÚSQUEDA Y FILTRO DE ESTADO -->
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="inputBuscarPedido" class="input-control" placeholder="Buscar por ID pedido, cliente o RUT...">
+                <select id="selectEstadoPedido" class="select-control" style="width: 200px;">
+                    <option value="">Todos los estados</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En Preparación">En Preparación</option>
+                    <option value="Enviado">Enviado</option>
+                    <option value="Entregado">Entregado</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- TABLA DE PEDIDOS -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>N° Pedido</th>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Seguimiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPedidosBody">
+                    <tr>
+                        <td><strong>#PED-3001</strong></td>
+                        <td>2026-09-07</td>
+                        <td>Gonzalo Ramírez</td>
+                        <td>$145.000</td>
+                        <td><span class="badge badge-warning">Pendiente</span></td>
+                        <td>---</td>
+                        <td>
+                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#PED-3002</strong></td>
+                        <td>2026-09-06</td>
+                        <td>Valeria Araya</td>
+                        <td>$89.990</td>
+                        <td><span class="badge badge-info">En Preparación</span></td>
+                        <td>---</td>
+                        <td>
+                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#PED-3003</strong></td>
+                        <td>2026-09-04</td>
+                        <td>Lucas Morales</td>
+                        <td>$320.000</td>
+                        <td><span class="badge badge-primary">Enviado</span></td>
+                        <td>ST-987654321</td>
+                        <td>
+                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#PED-3004</strong></td>
+                        <td>2026-09-02</td>
+                        <td>Camila Navarro</td>
+                        <td>$45.000</td>
+                        <td><span class="badge badge-success">Entregado</span></td>
+                        <td>ST-123456789</td>
+                        <td>
+                            <button class="btn-action btn-edit btn-gestionar">Gestionar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- MODAL GESTIONAR ESTADO / SEGUIMIENTO -->
+    <div class="modal-overlay" id="modalPedido">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Actualizar Estado del Pedido <span id="modalIdPedido"></span></h2>
+            </div>
+            <form id="formPedido">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="nuevoEstado">Estado del Pedido</label>
+                        <select id="nuevoEstado" class="select-control" required>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En Preparación">En Preparación</option>
+                            <option value="Enviado">Enviado</option>
+                            <option value="Entregado">Entregado</option>
+                            <option value="Cancelado">Cancelado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="codigoSeguimiento">Código de Seguimiento (Courrier)</label>
+                        <input type="text" id="codigoSeguimiento" class="input-control" placeholder="Ej: Starken, Chilexpress o Blue Express (Código)">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btnCancelarPedido">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-pedidos.js"></script>
+</body>
+</html>
