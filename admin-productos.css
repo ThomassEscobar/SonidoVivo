@@ -28,6 +28,16 @@ body {
 }
 
 /* =========================================================
+   LAYOUT ADMIN (CONTENEDOR DERECHO)
+========================================================= */
+.admin-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* =========================================================
    SIDEBAR
 ========================================================= */
 .sidebar {
@@ -86,7 +96,6 @@ body {
 .main-content {
     flex: 1;
     padding: 36px;
-    overflow-y: auto;
 }
 
 .header-title {
@@ -332,16 +341,9 @@ tr:hover {
     border-top: 1px solid var(--sv-border);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; padding: 20px; }
-    .sidebar nav { flex-direction: row; overflow-x: auto; }
-    .main-content { padding: 20px; }
-    .form-grid { grid-template-columns: 1fr; }
-    .form-group.full-width { grid-column: span 1; }
-}
-
+/* =========================================================
+   FOOTER
+========================================================= */
 .site-footer {
     background-color: var(--sv-dark-soft);
     border-top: 1px solid var(--sv-border);
@@ -362,7 +364,6 @@ tr:hover {
     border-bottom: 1px solid var(--sv-border);
 }
 
-/* MARCA Y REDES SOCIALES */
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -427,7 +428,6 @@ tr:hover {
     transform: translateY(-3px);
 }
 
-/* COLUMNAS DE NAVEGACIÓN Y CONTACTO */
 .footer-column h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
@@ -454,7 +454,6 @@ tr:hover {
     color: var(--sv-primary);
 }
 
-/* INFORMACIÓN DE CONTACTO / ADDRESS */
 .footer-column address {
     font-style: normal;
     display: flex;
@@ -476,7 +475,6 @@ tr:hover {
     width: 16px;
 }
 
-/* SECCIÓN INFERIOR (COPYRIGHT Y LEGAL) */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -503,11 +501,20 @@ tr:hover {
     color: var(--sv-white);
 }
 
-/* ADAPTACIÓN RESPONSIVA */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .footer-main {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; padding: 20px; }
+    .sidebar nav { flex-direction: row; overflow-x: auto; }
+    .main-content { padding: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
 }
 
 @media (max-width: 550px) {

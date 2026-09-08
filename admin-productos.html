@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Productos - Sonido Vivo</title>
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="admin-productos.css">
 </head>
 <body>
@@ -18,79 +20,170 @@
         </nav>
     </aside>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="main-content">
-        
-        <div class="header-title">
-            <h1>Gestión del Catálogo de Productos</h1>
-            <button class="btn-primary" id="btnNuevoProducto">+ Nuevo Producto</button>
-        </div>
+    <!-- CONTENEDOR DE CONTENIDO + FOOTER -->
+    <div class="admin-layout">
 
-        <!-- BARRA DE BÚSQUEDA Y FILTRO DE CATEGORÍA -->
-        <div class="toolbar">
-            <div class="search-box">
-                <input type="text" id="inputBuscarProducto" class="input-control" placeholder="Buscar por código o nombre...">
-                <select id="selectCategoria" class="select-control" style="width: 200px;">
-                    <option value="">Todas las categorías</option>
-                    <option value="Guitarras">Guitarras</option>
-                    <option value="Amplificadores">Amplificadores</option>
-                    <option value="Accesorios">Accesorios</option>
-                </select>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <div class="header-title">
+                <h1>Gestión del Catálogo de Productos</h1>
+                <button class="btn-primary" id="btnNuevoProducto">+ Nuevo Producto</button>
             </div>
-        </div>
 
-        <!-- TABLA DE PRODUCTOS -->
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Producto</th>
-                        <th>Categoría</th>
-                        <th>Precio Venta</th>
-                        <th>Stock</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaProductosBody">
-                    <tr>
-                        <td><strong>GUIT-001</strong></td>
-                        <td>Guitarra Eléctrica Fender Stratocaster</td>
-                        <td>Guitarras</td>
-                        <td>$650.000</td>
-                        <td><span class="stock-ok">5 un.</span></td>
-                        <td>
-                            <button class="btn-action btn-edit">Editar</button>
-                            <button class="btn-action btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>AMP-002</strong></td>
-                        <td>Amplificador Marshall Mustang 50W</td>
-                        <td>Amplificadores</td>
-                        <td>$220.000</td>
-                        <td><span class="stock-low">1 un.</span></td>
-                        <td>
-                            <button class="btn-action btn-edit">Editar</button>
-                            <button class="btn-action btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>PED-015</strong></td>
-                        <td>Pedal Boss DS-1 Distortion</td>
-                        <td>Accesorios</td>
-                        <td>$65.000</td>
-                        <td><span class="stock-out">0 un.</span></td>
-                        <td>
-                            <button class="btn-action btn-edit">Editar</button>
-                            <button class="btn-action btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <!-- BARRA DE BÚSQUEDA Y FILTRO DE CATEGORÍA -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" id="inputBuscarProducto" class="input-control" placeholder="Buscar por código o nombre...">
+                    <select id="selectCategoria" class="select-control" style="width: 200px;">
+                        <option value="">Todas las categorías</option>
+                        <option value="Guitarras">Guitarras</option>
+                        <option value="Amplificadores">Amplificadores</option>
+                        <option value="Accesorios">Accesorios</option>
+                    </select>
+                </div>
+            </div>
 
-    </main>
+            <!-- TABLA DE PRODUCTOS -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio Venta</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProductosBody">
+                        <tr>
+                            <td><strong>GUIT-001</strong></td>
+                            <td>Guitarra Eléctrica Fender Stratocaster</td>
+                            <td>Guitarras</td>
+                            <td>$650.000</td>
+                            <td><span class="stock-ok">5 un.</span></td>
+                            <td>
+                                <button class="btn-action btn-edit">Editar</button>
+                                <button class="btn-action btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>AMP-002</strong></td>
+                            <td>Amplificador Marshall Mustang 50W</td>
+                            <td>Amplificadores</td>
+                            <td>$220.000</td>
+                            <td><span class="stock-low">1 un.</span></td>
+                            <td>
+                                <button class="btn-action btn-edit">Editar</button>
+                                <button class="btn-action btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>PED-015</strong></td>
+                            <td>Pedal Boss DS-1 Distortion</td>
+                            <td>Accesorios</td>
+                            <td>$65.000</td>
+                            <td><span class="stock-out">0 un.</span></td>
+                            <td>
+                                <button class="btn-action btn-edit">Editar</button>
+                                <button class="btn-action btn-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <!-- FOOTER GLOBAL -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-main">
+
+                    <!-- Marca -->
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo footer-logo">
+                            <span class="logo-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </span>
+                            <span class="logo-text">
+                                SONIDO<span>VIVO</span>
+                            </span>
+                        </a>
+                        <p>
+                            Instrumentos musicales, equipos de sonido
+                            y accesorios para músicos.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram de Sonido Vivo">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook de Sonido Vivo">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube de Sonido Vivo">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Navegación -->
+                    <div class="footer-column">
+                        <h2>Tienda</h2>
+                        <ul>
+                            <li><a href="catalogo.html">Catálogo</a></li>
+                            <li><a href="catalogo.html?categoria=guitarras">Guitarras</a></li>
+                            <li><a href="catalogo.html?categoria=bajos">Bajos</a></li>
+                            <li><a href="catalogo.html?categoria=baterias">Baterías</a></li>
+                            <li><a href="catalogo.html?categoria=teclados">Teclados</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Atención -->
+                    <div class="footer-column">
+                        <h2>Atención</h2>
+                        <ul>
+                            <li><a href="login.html">Mi cuenta</a></li>
+                            <li><a href="carrito.html">Mi carrito</a></li>
+                            <li><a href="#nosotros">Sobre nosotros</a></li>
+                            <li><a href="#ubicacion">Ubicación</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contacto -->
+                    <div class="footer-column" id="ubicacion">
+                        <h2>Encuéntranos</h2>
+                        <address>
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Viña del Mar, Región de Valparaíso
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i>
+                                Atención al cliente
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                contacto@sonidovivo.cl
+                            </p>
+                        </address>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+                    <div class="footer-legal">
+                        <a href="#">Términos y condiciones</a>
+                        <a href="#">Política de privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
 
     <!-- MODAL CREAR / EDITAR PRODUCTO -->
     <div class="modal-overlay" id="modalProducto">
@@ -137,180 +230,6 @@
             </form>
         </div>
     </div>
-
-    <footer class="site-footer">
-
-        <div class="footer-container">
-
-            <div class="footer-main">
-
-                <!-- Marca -->
-                <div class="footer-brand">
-
-                    <a href="index.html" class="logo footer-logo">
-
-                        <span class="logo-icon">
-                            <i class="fa-solid fa-music"></i>
-                        </span>
-
-                        <span class="logo-text">
-                            SONIDO<span>VIVO</span>
-                        </span>
-
-                    </a>
-
-                    <p>
-                        Instrumentos musicales, equipos de sonido
-                        y accesorios para músicos.
-                    </p>
-
-                    <div class="social-links">
-
-                        <a
-                            href="#"
-                            aria-label="Instagram de Sonido Vivo"
-                        >
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="Facebook de Sonido Vivo"
-                        >
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="YouTube de Sonido Vivo"
-                        >
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Navegación -->
-                <div class="footer-column">
-
-                    <h2>Tienda</h2>
-
-                    <ul>
-                        <li>
-                            <a href="catalogo.html">Catálogo</a>
-                        </li>
-
-                        <li>
-                            <a href="catalogo.html?categoria=guitarras">
-                                Guitarras
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="catalogo.html?categoria=bajos">
-                                Bajos
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="catalogo.html?categoria=baterias">
-                                Baterías
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="catalogo.html?categoria=teclados">
-                                Teclados
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-
-
-                <!-- Atención -->
-                <div class="footer-column">
-
-                    <h2>Atención</h2>
-
-                    <ul>
-                        <li>
-                            <a href="login.html">Mi cuenta</a>
-                        </li>
-
-                        <li>
-                            <a href="carrito.html">Mi carrito</a>
-                        </li>
-
-                        <li>
-                            <a href="#nosotros">Sobre nosotros</a>
-                        </li>
-
-                        <li>
-                            <a href="#ubicacion">Ubicación</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-
-                <!-- Contacto -->
-                <div
-                    class="footer-column"
-                    id="ubicacion"
-                >
-
-                    <h2>Encuéntranos</h2>
-
-                    <address>
-
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            Viña del Mar, Región de Valparaíso
-                        </p>
-
-                        <p>
-                            <i class="fa-solid fa-phone"></i>
-                            Atención al cliente
-                        </p>
-
-                        <p>
-                            <i class="fa-solid fa-envelope"></i>
-                            contacto@sonidovivo.cl
-                        </p>
-
-                    </address>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    &copy; 2026 Sonido Vivo. Todos los derechos reservados.
-                </p>
-
-                <div class="footer-legal">
-
-                    <a href="#">
-                        Términos y condiciones
-                    </a>
-
-                    <a href="#">
-                        Política de privacidad
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
 
     <script src="admin-productos.js"></script>
 </body>
