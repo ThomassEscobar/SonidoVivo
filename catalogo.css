@@ -1,0 +1,310 @@
+/* =========================================================
+   SONIDO VIVO - CATALOGO.CSS
+   Estilos específicos de la página del catálogo
+========================================================= */
+
+.catalog-hero {
+    padding: 60px 0 30px;
+    background: linear-gradient(180deg, var(--sv-dark-soft) 0%, var(--sv-dark) 100%);
+    border-bottom: 1px solid var(--sv-border);
+}
+
+.catalog-hero h1 {
+    margin: 10px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -1.5px;
+}
+
+.catalog-hero p {
+    color: var(--sv-muted);
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Layout de 2 columnas */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* Sidebar */
+.catalog-sidebar {
+    background: var(--sv-dark-soft);
+    border: 1px solid var(--sv-border);
+    border-radius: var(--sv-radius);
+    padding: 24px;
+    height: fit-content;
+    position: sticky;
+    top: 98px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.close-sidebar {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--sv-white);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--sv-border);
+    padding-bottom: 20px;
+}
+
+.filter-group:last-of-type {
+    border-bottom: none;
+}
+
+.filter-group label,
+.filter-group h3 {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sv-text);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Caja de Búsqueda */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    color: var(--sv-muted);
+    font-size: 14px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px 0 38px;
+    background: var(--sv-card);
+    border: 1px solid var(--sv-border);
+    border-radius: var(--sv-radius-small);
+    color: var(--sv-white);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--sv-primary);
+}
+
+/* Lista de Filtros de Categoría */
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--sv-muted);
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(255, 90, 31, 0.12);
+    color: var(--sv-primary);
+    font-weight: 600;
+}
+
+/* Selects de filtro */
+.filter-select {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    background: var(--sv-card);
+    border: 1px solid var(--sv-border);
+    border-radius: var(--sv-radius-small);
+    color: var(--sv-white);
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-select option {
+    background: var(--sv-dark-soft);
+    color: var(--sv-white);
+}
+
+/* Rango de precio */
+.price-range {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-range input[type="range"] {
+    accent-color: var(--sv-primary);
+    cursor: pointer;
+}
+
+.price-range span {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sv-primary);
+}
+
+.btn-reset {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* Toolbar superior */
+.catalog-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background: var(--sv-dark-soft);
+    padding: 14px 20px;
+    border: 1px solid var(--sv-border);
+    border-radius: var(--sv-radius);
+}
+
+.results-count {
+    margin: 0;
+    font-size: 13px;
+    color: var(--sv-muted);
+}
+
+.sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-wrapper label {
+    font-size: 13px;
+    color: var(--sv-muted);
+    white-space: nowrap;
+}
+
+.sort-wrapper .filter-select {
+    width: auto;
+}
+
+/* Muestra sin resultados */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--sv-card);
+    border: 1px dashed var(--sv-border);
+    border-radius: var(--sv-radius);
+    margin-top: 20px;
+}
+
+.no-results i {
+    font-size: 48px;
+    color: var(--sv-primary);
+    margin-bottom: 15px;
+}
+
+.no-results h3 {
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.no-results p {
+    color: var(--sv-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.filter-mobile-toggle {
+    display: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+    .catalog-layout {
+        grid-template-columns: 240px 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .filter-mobile-toggle {
+        display: inline-flex;
+    }
+
+    .catalog-layout {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+
+    .catalog-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 2000;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .catalog-sidebar.active {
+        left: 0;
+    }
+
+    .close-sidebar {
+        display: block;
+    }
+
+    .catalog-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .sort-wrapper {
+        justify-content: space-between;
+    }
+}
