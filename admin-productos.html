@@ -1,0 +1,157 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Sonido Vivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENÚ LATERAL -->
+    <aside class="sidebar">
+        <h2>Sonido Vivo - Admin</h2>
+        <nav>
+            <a href="admin-productos.html" class="active">📦 Productos e Inventario</a>
+            <a href="admin-pedidos.html">🛒 Gestión de Pedidos</a>
+            <a href="admin-clientes.html">👥 Clientes Registrados</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <div class="header-title">
+            <h1>Gestión del Catálogo de Productos</h1>
+            <button class="btn-primary" id="btnNuevoProducto">+ Nuevo Producto</button>
+        </div>
+
+        <!-- Barra de Búsqueda y Filtros -->
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" class="input-control" placeholder="Buscar por código o nombre...">
+                <select class="select-control" style="width: 180px;">
+                    <option value="">Todas las categorías</option>
+                    <option value="guitarras">Guitarras</option>
+                    <option value="bajos">Bajos</option>
+                    <option value="baterias">Baterías</option>
+                    <option value="teclados">Teclados</option>
+                    <option value="amplificadores">Amplificadores</option>
+                    <option value="accesorios">Accesorios</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tabla de Productos -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio Venta</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GUIT-001</strong></td>
+                        <td>Guitarra Eléctrica Fender Stratocaster</td>
+                        <td>Guitarras</td>
+                        <td>$650.000</td>
+                        <td>5 un.</td>
+                        <td><span class="badge badge-success">Disponible</span></td>
+                        <td>
+                            <button class="btn-action btn-edit">Editar</button>
+                            <button class="btn-action btn-danger">Desactivar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>AMP-002</strong></td>
+                        <td>Amplificador Marshall Mustang 50W</td>
+                        <td>Amplificadores</td>
+                        <td>$220.000</td>
+                        <td><span class="stock-critical">1 un.</span></td>
+                        <td><span class="badge badge-warning">Poco Stock</span></td>
+                        <td>
+                            <button class="btn-action btn-edit">Editar</button>
+                            <button class="btn-action btn-danger">Desactivar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>PED-015</strong></td>
+                        <td>Pedal Boss DS-1 Distortion</td>
+                        <td>Accesorios</td>
+                        <td>$65.000</td>
+                        <td>0 un.</td>
+                        <td><span class="badge badge-danger">Agotado</span></td>
+                        <td>
+                            <button class="btn-action btn-edit">Editar</button>
+                            <button class="btn-action btn-danger">Desactivar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- FORMULARIO MODAL (AGREGAR / EDITAR PRODUCTO) -->
+    <div class="modal-overlay" id="modalProducto">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Registrar Nuevo Producto</h2>
+            </div>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="codigo">Código / SKU</label>
+                        <input type="text" id="codigo" class="input-control" placeholder="Ej: GUIT-002" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" class="select-control" required>
+                            <option value="">Seleccione...</option>
+                            <option value="guitarras">Guitarras</option>
+                            <option value="bajos">Bajos</option>
+                            <option value="baterias">Baterías</option>
+                            <option value="teclados">Teclados</option>
+                            <option value="amplificadores">Amplificadores</option>
+                            <option value="accesorios">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="nombre">Nombre del Producto</label>
+                        <input type="text" id="nombre" class="input-control" placeholder="Nombre completo del instrumento o equipo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="precio">Precio ($ CLP)</label>
+                        <input type="number" id="precio" class="input-control" placeholder="650000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock">Stock Inicial</label>
+                        <input type="number" id="stock" class="input-control" placeholder="10" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" class="input-control" rows="3" placeholder="Detalles técnicos, madera, accesorios incluidos..."></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btnCancelar">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
