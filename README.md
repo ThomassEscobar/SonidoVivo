@@ -1,7 +1,6 @@
 # 🎵 Sonido Vivo — E-commerce de Instrumentos Musicales
 
 ![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
-![Status](https://img.shields.io/badge/status-En_Desarrollo-green.svg)
 ![Subject](https://img.shields.io/badge/Asignatura-Fullstack_2-blue.svg)
 
 Bienvenido al repositorio oficial de **Sonido Vivo**, una plataforma e-commerce web orientada a la venta de instrumentos musicales, equipos de sonido y accesorios para músicos. Este proyecto ha sido desarrollado como parte de la evaluación práctica para la asignatura **Fullstack 2**.
@@ -13,7 +12,7 @@ Bienvenido al repositorio oficial de **Sonido Vivo**, una plataforma e-commerce 
 * **Asignatura:** Desarrollo Fullstack II
 * **Institución:** Duoc UC — Sede Plaza Norte
 * **Docente:** Cristian Vega
-* **Semestre / Año:** 2026
+* **Semestre / Año:** 2026-2
 
 ### 👥 Integrantes / Alumnos
 * **Thomas Escobar** — *Desarrollador* — [GitHub Profile](https://github.com/ThomassEscobar)
@@ -41,38 +40,16 @@ En este proyecto aplicamos una estrategia de ramificación basada en **GitFlow**
 | `feature/*` | Funcionalidades específicas (ej. `feature/login`, `feature/carrito`). | Ramas de trabajo de integrantes |
 | `hotfix/*` | Correcciones urgentes aplicadas directamente sobre main. | Temporales |
 
-📁 Estructura del Proyecto
-SonidoVivo/
-├── assets/
-├── admin-pedidos.css
-├── admin-pedidos.html
-├── admin-pedidos.js
-├── admin-productos.css
-├── admin-productos.html
-├── admin-productos.js
-├── admin-usuarios.css
-├── admin-usuarios.html
-├── admin-usuarios.js
-├── admin-ventas.css
-├── admin-ventas.html
-├── admin-ventas.js
-├── admin.css
-├── admin.html
-├── admin.js
-├── carrito.css
-├── carrito.html
-├── carrito.js
-├── catalogo.css
-├── catalogo.html
-├── catalogo.js
-├── checkout.css
-├── checkout.html
-├── checkout.js
-├── descargar_imagenes.py
-├── index.css
-├── index.html
-├── index.js
-├── login.css
-├── login.html
-└── login.js
+## ⚙️ Scripts Utilitarios
+
+El proyecto cuenta con un script de automatización en Python para la gestión de recursos multimedia:
+
+* **`descargar_imagenes.py`**: Descarga y organiza automáticamente las imágenes necesarias para el catálogo y los productos desde fuentes externas.
+
+Para ejecutarlo:
+```bash
+python descargar_imagenes.py
+
+
+
 
