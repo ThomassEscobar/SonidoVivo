@@ -1,11 +1,1058 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta
+        name="description"
+        content="Sonido Vivo - Tienda de instrumentos musicales, equipos de sonido y accesorios para músicos."
+    >
+
+    <title>Sonido Vivo | Instrumentos y Equipos Musicales</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Iconos -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Sonido Vivo - Inicio">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-music"></i>
+                </span>
+
+                <span class="logo-text">
+                    SONIDO<span>VIVO</span>
+                </span>
+            </a>
+
+            <!-- Navegación principal -->
+            <nav class="main-nav" aria-label="Navegación principal">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="index.html" class="nav-link active">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html" class="nav-link">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html?categoria=guitarras" class="nav-link">
+                            Guitarras
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html?categoria=baterias" class="nav-link">
+                            Baterías
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html?categoria=teclados" class="nav-link">
+                            Teclados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#nosotros" class="nav-link">
+                            Nosotros
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Acciones -->
+            <div class="header-actions">
+
+                <a
+                    href="catalogo.html"
+                    class="header-action"
+                    aria-label="Buscar productos"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a
+                    href="login.html"
+                    class="header-action"
+                    aria-label="Iniciar sesión"
+                >
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <a
+                    href="carrito.html"
+                    class="header-action cart-action"
+                    aria-label="Ver carrito"
+                >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <!-- Botón menú móvil -->
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+        <section class="hero" aria-labelledby="hero-title">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-headphones"></i>
+                        EQUIPA TU SONIDO
+                    </span>
+
+                    <h1 id="hero-title">
+                        Tu música.
+                        <span>Tu instrumento.</span>
+                        Tu sonido.
+                    </h1>
+
+                    <p>
+                        Encuentra instrumentos, equipos de sonido y accesorios
+                        para llevar tu música al siguiente nivel.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="catalogo.html" class="btn btn-primary">
+                            Explorar catálogo
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#categorias" class="btn btn-secondary">
+                            Ver categorías
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BENEFICIOS
+        ================================================== -->
+        <section class="benefits" aria-label="Beneficios de Sonido Vivo">
+
+            <div class="section-container benefits-grid">
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div>
+                        <h2>Amplio catálogo</h2>
+                        <p>
+                            Instrumentos, equipos y accesorios para músicos.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <h2>Retiro en tienda</h2>
+                        <p>
+                            Compra online y retira tu pedido en tienda.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <div>
+                        <h2>Despacho</h2>
+                        <p>
+                            Recibe tus productos donde estés.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+
+                    <div>
+                        <h2>Servicio especializado</h2>
+                        <p>
+                            Experiencia y asesoría para músicos.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORÍAS
+        ================================================== -->
+        <section
+            class="categories section"
+            id="categorias"
+            aria-labelledby="categories-title"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            ENCUENTRA TU SONIDO
+                        </span>
+
+                        <h2 id="categories-title">
+                            Explora nuestras categorías
+                        </h2>
+                    </div>
+
+                    <a href="catalogo.html" class="section-link">
+                        Ver catálogo completo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a
+                        href="catalogo.html?categoria=guitarras"
+                        class="category-card category-guitarras"
+                    >
+
+                        <div class="category-content">
+                            <span>01</span>
+                            <h3>Guitarras</h3>
+                            <p>Acústicas y eléctricas</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="catalogo.html?categoria=bajos"
+                        class="category-card category-bajos"
+                    >
+
+                        <div class="category-content">
+                            <span>02</span>
+                            <h3>Bajos</h3>
+                            <p>Potencia y profundidad</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="catalogo.html?categoria=baterias"
+                        class="category-card category-baterias"
+                    >
+
+                        <div class="category-content">
+                            <span>03</span>
+                            <h3>Baterías</h3>
+                            <p>Ritmo y percusión</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="catalogo.html?categoria=teclados"
+                        class="category-card category-teclados"
+                    >
+
+                        <div class="category-content">
+                            <span>04</span>
+                            <h3>Teclados</h3>
+                            <p>Sonidos sin límites</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="catalogo.html?categoria=amplificadores"
+                        class="category-card category-amplificadores"
+                    >
+
+                        <div class="category-content">
+                            <span>05</span>
+                            <h3>Amplificadores</h3>
+                            <p>Haz que se escuche</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+
+                    <a
+                        href="catalogo.html?categoria=microfonos"
+                        class="category-card category-microfonos"
+                    >
+
+                        <div class="category-content">
+                            <span>06</span>
+                            <h3>Micrófonos</h3>
+                            <p>Captura cada detalle</p>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right category-arrow"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUCTOS DESTACADOS
+        ================================================== -->
+        <section
+            class="featured section"
+            aria-labelledby="featured-title"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            SELECCIÓN SONIDO VIVO
+                        </span>
+
+                        <h2 id="featured-title">
+                            Productos destacados
+                        </h2>
+                    </div>
+
+                    <a href="catalogo.html" class="section-link">
+                        Ver todos
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="products-grid">
+
+                    <!-- Producto 1 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                DESTACADO
+                            </span>
+
+                            <img
+                                src="assets/img/productos/yamaha-f310.jpg"
+                                alt="Guitarra acústica Yamaha F310"
+                                loading="lazy"
+                            >
+
+                            <button
+                                type="button"
+                                class="quick-add"
+                                aria-label="Agregar Yamaha F310 al carrito"
+                            >
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Guitarras Acústicas
+                            </span>
+
+                            <h3>
+                                Yamaha F310
+                            </h3>
+
+                            <p class="product-description">
+                                Guitarra acústica ideal para comenzar a tocar.
+                            </p>
+
+                            <div class="product-footer">
+
+                                <strong class="product-price">
+                                    $129.990
+                                </strong>
+
+                                <a
+                                    href="producto.html?id=GA001"
+                                    class="product-link"
+                                >
+                                    Ver producto
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Producto 2 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge product-badge-new">
+                                NUEVO
+                            </span>
+
+                            <img
+                                src="assets/img/productos/fender-cd60s.jpg"
+                                alt="Guitarra acústica Fender CD-60S"
+                                loading="lazy"
+                            >
+
+                            <button
+                                type="button"
+                                class="quick-add"
+                                aria-label="Agregar Fender CD-60S al carrito"
+                            >
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Guitarras Acústicas
+                            </span>
+
+                            <h3>
+                                Fender CD-60S
+                            </h3>
+
+                            <p class="product-description">
+                                Sonido cálido y construcción pensada para músicos.
+                            </p>
+
+                            <div class="product-footer">
+
+                                <strong class="product-price">
+                                    $249.990
+                                </strong>
+
+                                <a
+                                    href="producto.html?id=GA002"
+                                    class="product-link"
+                                >
+                                    Ver producto
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Producto 3 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <img
+                                src="assets/img/productos/yamaha-c40.jpg"
+                                alt="Guitarra clásica Yamaha C40"
+                                loading="lazy"
+                            >
+
+                            <button
+                                type="button"
+                                class="quick-add"
+                                aria-label="Agregar Yamaha C40 al carrito"
+                            >
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Guitarras Clásicas
+                            </span>
+
+                            <h3>
+                                Yamaha C40
+                            </h3>
+
+                            <p class="product-description">
+                                Una opción versátil para estudiantes y principiantes.
+                            </p>
+
+                            <div class="product-footer">
+
+                                <strong class="product-price">
+                                    $139.990
+                                </strong>
+
+                                <a
+                                    href="producto.html?id=GC001"
+                                    class="product-link"
+                                >
+                                    Ver producto
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Producto 4 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <img
+                                src="assets/img/productos/takamine-gn20ce.jpg"
+                                alt="Guitarra electroacústica Takamine GN20CE"
+                                loading="lazy"
+                            >
+
+                            <button
+                                type="button"
+                                class="quick-add"
+                                aria-label="Agregar Takamine GN20CE al carrito"
+                            >
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Guitarras Electroacústicas
+                            </span>
+
+                            <h3>
+                                Takamine GN20CE
+                            </h3>
+
+                            <p class="product-description">
+                                Electroacústica preparada para escenario y estudio.
+                            </p>
+
+                            <div class="product-footer">
+
+                                <strong class="product-price">
+                                    $499.990
+                                </strong>
+
+                                <a
+                                    href="producto.html?id=GE001"
+                                    class="product-link"
+                                >
+                                    Ver producto
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VIDEO
+        ================================================== -->
+        <section
+            class="video-section section"
+            aria-labelledby="video-title"
+        >
+
+            <div class="section-container video-container">
+
+                <div class="video-content">
+
+                    <span class="section-eyebrow">
+                        VIVE LA MÚSICA
+                    </span>
+
+                    <h2 id="video-title">
+                        El instrumento correcto
+                        cambia la experiencia.
+                    </h2>
+
+                    <p>
+                        Descubre el mundo de los instrumentos musicales y
+                        encuentra el equipo que mejor se adapta a tu sonido.
+                    </p>
+
+                    <a href="catalogo.html" class="btn btn-primary">
+                        Encontrar mi instrumento
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="video-wrapper">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+                        title="Video musical de Sonido Vivo"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    >
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOSOTROS
+        ================================================== -->
+        <section
+            class="about section"
+            id="nosotros"
+            aria-labelledby="about-title"
+        >
+
+            <div class="section-container about-grid">
+
+                <div class="about-image">
+
+                    <img
+                        src="assets/img/banners/sonido-vivo-tienda.jpg"
+                        alt="Interior de la tienda Sonido Vivo"
+                        loading="lazy"
+                    >
+
+                    <div class="about-experience">
+                        <strong>11</strong>
+                        <span>años haciendo música</span>
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <span class="section-eyebrow">
+                        SOBRE SONIDO VIVO
+                    </span>
+
+                    <h2 id="about-title">
+                        Más que una tienda.
+                        <span>Somos parte de tu música.</span>
+                    </h2>
+
+                    <p>
+                        Sonido Vivo es una tienda especializada en instrumentos
+                        musicales, equipos de sonido y accesorios para músicos,
+                        ubicada en Viña del Mar.
+                    </p>
+
+                    <p>
+                        Nuestro objetivo es facilitar el acceso a un catálogo
+                        actualizado y permitir que nuestros clientes encuentren
+                        el equipo que necesitan de forma rápida y sencilla.
+                    </p>
+
+                    <a href="catalogo.html" class="text-link">
+                        Conoce nuestro catálogo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEWSLETTER / FORMULARIO
+        ================================================== -->
+        <section
+            class="newsletter section"
+            aria-labelledby="newsletter-title"
+        >
+
+            <div class="section-container newsletter-container">
+
+                <div class="newsletter-content">
+
+                    <span class="section-eyebrow">
+                        MANTENTE AL DÍA
+                    </span>
+
+                    <h2 id="newsletter-title">
+                        Recibe novedades y ofertas.
+                    </h2>
+
+                    <p>
+                        Déjanos tu correo y mantente informado sobre nuevos
+                        productos, promociones y novedades de Sonido Vivo.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm"
+                    novalidate
+                >
+
+                    <div class="form-group">
+
+                        <label for="newsletterEmail">
+                            Correo electrónico
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                name="email"
+                                placeholder="tu@email.com"
+                                autocomplete="email"
+                                required
+                                aria-describedby="emailSuggestion emailError"
+                            >
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Suscribirme
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                        <small
+                            id="emailSuggestion"
+                            class="form-suggestion"
+                        >
+                            Usa un correo electrónico válido para recibir nuestras novedades.
+                        </small>
+
+                        <small
+                            id="emailError"
+                            class="form-error"
+                            role="alert"
+                        ></small>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-main">
+
+                <!-- Marca -->
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo footer-logo">
+
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-music"></i>
+                        </span>
+
+                        <span class="logo-text">
+                            SONIDO<span>VIVO</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Instrumentos musicales, equipos de sonido
+                        y accesorios para músicos.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a
+                            href="#"
+                            aria-label="Instagram de Sonido Vivo"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Facebook de Sonido Vivo"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="YouTube de Sonido Vivo"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Navegación -->
+                <div class="footer-column">
+
+                    <h2>Tienda</h2>
+
+                    <ul>
+                        <li>
+                            <a href="catalogo.html">Catálogo</a>
+                        </li>
+
+                        <li>
+                            <a href="catalogo.html?categoria=guitarras">
+                                Guitarras
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="catalogo.html?categoria=bajos">
+                                Bajos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="catalogo.html?categoria=baterias">
+                                Baterías
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="catalogo.html?categoria=teclados">
+                                Teclados
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Atención -->
+                <div class="footer-column">
+
+                    <h2>Atención</h2>
+
+                    <ul>
+                        <li>
+                            <a href="login.html">Mi cuenta</a>
+                        </li>
+
+                        <li>
+                            <a href="carrito.html">Mi carrito</a>
+                        </li>
+
+                        <li>
+                            <a href="#nosotros">Sobre nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#ubicacion">Ubicación</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Contacto -->
+                <div
+                    class="footer-column"
+                    id="ubicacion"
+                >
+
+                    <h2>Encuéntranos</h2>
+
+                    <address>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Viña del Mar, Región de Valparaíso
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            Atención al cliente
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            contacto@sonidovivo.cl
+                        </p>
+
+                    </address>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Sonido Vivo. Todos los derechos reservados.
+                </p>
+
+                <div class="footer-legal">
+
+                    <a href="#">
+                        Términos y condiciones
+                    </a>
+
+                    <a href="#">
+                        Política de privacidad
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript general -->
+    <script src="js/app.js"></script>
+
 </body>
 </html>
